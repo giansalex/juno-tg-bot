@@ -1,0 +1,49 @@
+{
+  "name": "juno-bot-ts",
+  "version": "1.0.0",
+  "main": "./lib/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:commonjs": "rimraf lib && tsc --target es5 --outDir lib --module commonjs --declaration",
+    "build:es": "rimraf es && tsc --target es6 --outDir es --module es6",
+    "build": "npm run build:commonjs && npm run build:es",
+    "ts": "ts-node src/",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node-telegram-bot-api": "^0.51.4",
+    "rimraf": "^3.0.2",
+    "ts-node": "^10.1.0",
+    "typescript": "^4.3.5"
+  },
+  "files": [
+    "es",
+    "lib"
+  ],
+  "types": "./lib/index.d.ts",
+  "jsnext:main": "./es/index.js",
+  "module": "./es/index.js",
+  "dependencies": {
+    "@cosmjs/cosmwasm-launchpad": "^0.25.6",
+    "@cosmjs/cosmwasm-stargate": "^0.25.0",
+    "@cosmjs/stargate": "^0.24.0",
+    "node-telegram-bot-api": "^0.54.0",
+    "nodemon": "^2.0.12",
+    "wikipedia": "^1.1.1"
+  },
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Highlander-maker/juno-tg-bot.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Highlander-maker/juno-tg-bot/issues"
+  },
+  "homepage": "https://github.com/Highlander-maker/juno-tg-bot#readme",
+  "description": ""
+}
